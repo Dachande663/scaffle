@@ -16,7 +16,7 @@
 	<fieldset>
 
 		<div class="form-group" ng-repeat="(key, value) in entity">
-			<label class="col-lg-2 control-label" ng-bind="key"></label>
+			<label class="col-lg-2 control-label" ng-bind="key | humanize"></label>
 			<div class="col-lg-10">
 				<input type="text" class="form-control" ng-model="entity[key].name ? entity[key].name : entity[key]">
 			</div>

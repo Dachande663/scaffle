@@ -14,7 +14,16 @@
 
 		<div id="navbar" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
-				<li><a ui-sref="app.collections">Collections</a></li>
+				<li class="dropdown" dropdown>
+					<a ui-sref="app.collections" class="dropdown-toggle" dropdown-toggle>Collections <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a ui-sref="app.collection.list({collection:'cinemas'})">Cinemas</a></li>
+						<li><a ui-sref="app.collection.list({collection:'movies'})">Movies</a></li>
+						<li><a ui-sref="app.collection.list({collection:'visits'})">Visits</a></li>
+						<li class="divider"></li>
+						<li><a ui-sref="app.collections">View all</a></li>
+					</ul>
+				</li>
 				<li><a ui-sref="app.schemas.list">Schemas</a></li>
 				<li><a ui-sref="app.files.list">Files</a></li>
 				<li><a ui-sref="app.users.list">Users</a></li>

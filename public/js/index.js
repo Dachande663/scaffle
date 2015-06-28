@@ -3,7 +3,7 @@
 	'use strict';
 
 
-	var app = angular.module('Scaffle', ['ui.router']);
+	var app = angular.module('Scaffle', ['ui.bootstrap', 'ui.router']);
 
 
 	app.config(function($stateProvider, $urlRouterProvider){
@@ -112,6 +112,20 @@
 			plural: ucfirst($stateParams.collection)
 		};
 		$scope.entity = entity.data.item;
+	});
+
+
+	app.filter('humanize', function(){
+		return function(str) {
+			if(str === '_id') {
+				return 'ID';
+			}
+			if(str.charAt(0) === '_') {
+				str = str.substr(1);
+			}
+			str = str.replace(/_/g, ' ');
+			return ucfirst(str);
+		}
 	});
 
 
