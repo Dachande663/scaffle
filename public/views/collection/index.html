@@ -1,0 +1,28 @@
+<ul class="breadcrumb">
+	<li><a ui-sref="app.dashboard">Dashboard</a></li>
+	<li class="active">Collections</li>
+</ul>
+
+
+<div class="page-header">
+	<h1>Collections</h1>
+</div>
+
+
+<table class="table table-bordered table-striped">
+
+	<thead>
+		<tr>
+			<th>Name</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<tr ng-repeat="collection in collections">
+			<td>
+				<a ui-sref="app.collection.list({collection:collection._id})">{{ ::collection.name }}</a>
+			</td>
+		</tr>
+	</tbody>
+
+</table>

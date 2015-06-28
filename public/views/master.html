@@ -1,0 +1,45 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+
+	<div class="container">
+
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a ui-sref="app.dashboard" class="navbar-brand">Scaffle</a>
+		</div>
+
+		<div id="navbar" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li><a ui-sref="app.collections">Collections</a></li>
+				<li><a ui-sref="app.schemas.list">Schemas</a></li>
+				<li><a ui-sref="app.files.list">Files</a></li>
+				<li><a ui-sref="app.users.list">Users</a></li>
+				<li><a ui-sref="app.about">About</a></li>
+			</ul>
+		</div>
+
+	</div>
+
+</nav>
+
+
+<div class="container">
+
+	<div ui-view="master"></div>
+
+</div>
+
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				Powered by Scaffle. Part of the Peaks package.
+			</div>
+		</div>
+	</div>
+</footer>

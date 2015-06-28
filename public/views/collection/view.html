@@ -1,0 +1,33 @@
+<ul class="breadcrumb">
+	<li><a ui-sref="app.dashboard">Dashboard</a></li>
+	<li><a ui-sref="app.collections">Collections</a></li>
+	<li><a ui-sref="app.collection.list" ng-bind="::collection.plural"></a></li>
+	<li class="active" ng-bind="::entity.name"></li>
+</ul>
+
+
+<div class="page-header">
+	<a ui-sref="app.collection.list" class="btn btn-primary pull-right">View all</a>
+	<h1 ng-bind="::entity.name"></h1>
+</div>
+
+
+<form class="form-horizontal">
+	<fieldset>
+
+		<div class="form-group" ng-repeat="(key, value) in entity">
+			<label class="col-lg-2 control-label" ng-bind="key"></label>
+			<div class="col-lg-10">
+				<input type="text" class="form-control" ng-model="entity[key].name ? entity[key].name : entity[key]">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-lg-10 col-lg-offset-2">
+				<button type="reset" class="btn btn-default">Cancel</button>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</div>
+		</div>
+
+	</fieldset>
+</form>
