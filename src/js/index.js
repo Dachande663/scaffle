@@ -6,9 +6,10 @@
 	var app = angular.module('Scaffle.App', ['ui.bootstrap', 'ui.router']);
 
 
-	app.config(function($stateProvider, $urlRouterProvider){
+	app.config(function($locationProvider, $stateProvider, $urlRouterProvider){
 
 
+		$locationProvider.html5Mode(true);
 		$urlRouterProvider.otherwise('/');
 
 

@@ -9,6 +9,9 @@ app.disable('x-powered-by');
 
 app.use('/' + process.env.WEB_PATH, express.static('public'));
 
+app.use(function(req, res){
+	res.sendFile(__dirname + '/public/index.html');
+});
 
 var server = app.listen(process.env.WEB_PORT || 3002, function(){
 
