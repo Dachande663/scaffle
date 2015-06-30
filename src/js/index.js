@@ -16,14 +16,26 @@
 		$stateProvider.state('app', {
 			abstract: true,
 			url: '/',
-			templateUrl: 'master.html'
+			templateUrl: 'master.html',
+			resolve: {
+				Ranger: function(RangerLoader) {
+					return RangerLoader.load();
+				}
+			},
+			controller: function($scope, Ranger) {
+				$scope.collections = Ranger.getSchemas();
+			}
 		});
+
 
 		$stateProvider.state('app.dashboard', {
 			url: '',
 			views: {
 				'master@app': {
-					templateUrl: 'dashboard.html'
+					templateUrl: 'dashboard.html',
+					controller: function(Ranger) {
+						console.log(Ranger.doSomething());
+					}
 				}
 			}
 		});
@@ -53,7 +65,12 @@
 		$stateProvider.state('app.collection', {
 			abstract: true,
 			url: '-/:collection',
-			template: '<ui-view/>'
+			template: '<ui-view/>',
+			resolve: {
+				Schema: function($stateParams, Ranger) {
+					return Ranger.getSchema($stateParams.collection);
+				}
+			}
 		});
 
 

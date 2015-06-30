@@ -20,7 +20,7 @@
 	<tbody>
 		<tr ng-repeat="collection in collections">
 			<td>
-				<a ui-sref="app.collection.list({collection:collection._id})">{{ ::collection.name }}</a>
+				<a ui-sref="app.collection.list({collection:collection.slug})">{{ ::collection.name }}</a>
 			</td>
 		</tr>
 	</tbody>

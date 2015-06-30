@@ -1,0 +1,8 @@
+{
+  "name": "Test App",
+  "schemas": [
+    { "slug": "cinemas", "name": "Cinemas" },
+    { "slug": "movies", "name": "Movies" },
+    { "slug": "visits", "name": "Visits" }
+  ]
+}

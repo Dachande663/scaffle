@@ -1,13 +1,13 @@
 <ul class="breadcrumb">
 	<li><a ui-sref="app.dashboard">Dashboard</a></li>
 	<li><a ui-sref="app.collections">Collections</a></li>
-	<li class="active" ng-bind="::collection.plural"></li>
+	<li class="active" ng-bind="::schema.name"></li>
 </ul>
 
 
 <div class="page-header">
 	<a ui-sref="app.collection.new" class="btn btn-primary pull-right">Add new</a>
-	<h1 ng-bind="::collection.plural"></h1>
+	<h1 ng-bind="::schema.name"></h1>
 </div>
 
 
